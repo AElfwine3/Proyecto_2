@@ -158,47 +158,17 @@ public class Administrador extends javax.swing.JFrame {
 
         txtnombre_Estudiante.setText("Elvin Mayen");
         txtnombre_Estudiante.setNextFocusableComponent(txtcorreo_Estudiante);
-        txtnombre_Estudiante.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtnombre_EstudianteFocusGained(evt);
-            }
-        });
-        txtnombre_Estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtnombre_EstudianteMouseClicked(evt);
-            }
-        });
 
         jLabel4.setText("Correo:");
 
         txtcorreo_Estudiante.setText("emayenc3@gmail.com");
         txtcorreo_Estudiante.setNextFocusableComponent(txtcreditos_Estudiante);
-        txtcorreo_Estudiante.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtcorreo_EstudianteFocusGained(evt);
-            }
-        });
-        txtcorreo_Estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtcorreo_EstudianteMouseClicked(evt);
-            }
-        });
 
         jLabel5.setText("Creditos:");
 
         txtcreditos_Estudiante.setText("250");
         txtcreditos_Estudiante.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtcreditos_Estudiante.setNextFocusableComponent(bagregar_E);
-        txtcreditos_Estudiante.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtcreditos_EstudianteFocusGained(evt);
-            }
-        });
-        txtcreditos_Estudiante.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtcreditos_EstudianteMouseClicked(evt);
-            }
-        });
 
         jLabel6.setText("Contraseña:");
 
@@ -398,31 +368,11 @@ public class Administrador extends javax.swing.JFrame {
 
         txtnombre_Catedratico.setText("Elvin Mayen");
         txtnombre_Catedratico.setNextFocusableComponent(txtcorreo_Catedratico);
-        txtnombre_Catedratico.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtnombre_CatedraticoFocusGained(evt);
-            }
-        });
-        txtnombre_Catedratico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtnombre_CatedraticoMouseClicked(evt);
-            }
-        });
 
         jLabel10.setText("Correo:");
 
         txtcorreo_Catedratico.setText("emayenc3@gmail.com");
         txtcorreo_Catedratico.setNextFocusableComponent(txtcontraseña_Catedratico);
-        txtcorreo_Catedratico.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtcorreo_CatedraticoFocusGained(evt);
-            }
-        });
-        txtcorreo_Catedratico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtcorreo_CatedraticoMouseClicked(evt);
-            }
-        });
 
         jLabel12.setText("Contraseña:");
 
@@ -871,36 +821,6 @@ public class Administrador extends javax.swing.JFrame {
         new Login().setVisible(true);
     }//GEN-LAST:event_bsalirActionPerformed
 
-    private void txtcorreo_EstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreo_EstudianteMouseClicked
-        // TODO add your handling code here:
-        txtcorreo_Estudiante.setText("");
-    }//GEN-LAST:event_txtcorreo_EstudianteMouseClicked
-
-    private void txtcorreo_EstudianteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreo_EstudianteFocusGained
-        // TODO add your handling code here:
-        txtcorreo_Estudiante.setText("");
-    }//GEN-LAST:event_txtcorreo_EstudianteFocusGained
-
-    private void txtcreditos_EstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcreditos_EstudianteMouseClicked
-        // TODO add your handling code here:
-        txtcreditos_Estudiante.setText("");
-    }//GEN-LAST:event_txtcreditos_EstudianteMouseClicked
-
-    private void txtcreditos_EstudianteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcreditos_EstudianteFocusGained
-        // TODO add your handling code here:
-        txtcreditos_Estudiante.setText("");
-    }//GEN-LAST:event_txtcreditos_EstudianteFocusGained
-
-    private void txtnombre_EstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnombre_EstudianteMouseClicked
-        // TODO add your handling code here:
-        txtnombre_Estudiante.setText("");
-    }//GEN-LAST:event_txtnombre_EstudianteMouseClicked
-
-    private void txtnombre_EstudianteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnombre_EstudianteFocusGained
-        // TODO add your handling code here:
-        txtnombre_Estudiante.setText("");
-    }//GEN-LAST:event_txtnombre_EstudianteFocusGained
-
     private void bagregar_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bagregar_EActionPerformed
         // TODO add your handling code here:
         String Carne_EstudianteC = txtcarne_Estudiante.getText();
@@ -1063,9 +983,10 @@ public class Administrador extends javax.swing.JFrame {
                         case 5:
                             System.out.println("Es un estudiante");
                             String Contraseña_Estudiante = campos[0].substring(5).concat(campos[1].substring(0, 2));
+                            ListaSemestre listavacia = new ListaSemestre();
                             if (!lista_estudiante.buscar(campos[1])) {
                                 if (!lista_estudiante.buscarCarne(campos[0])) {
-                                    lista_estudiante.addPrimero(campos[0], campos[1], campos[2], campos[3], campos[4], Contraseña_Estudiante, null);
+                                    lista_estudiante.addPrimero(campos[0], campos[1], campos[2], campos[3], campos[4], Contraseña_Estudiante, listavacia);
                                     StyledDocument doc = TPmensajescarga.getStyledDocument();
                                     Style style = TPmensajescarga.addStyle("Estilo", null);
                                     StyleConstants.setForeground(style, Color.green);
@@ -1126,7 +1047,7 @@ public class Administrador extends javax.swing.JFrame {
                             break;
                         case 2:
                             System.out.println("Es un semestre");
-                            if (!lista_semestre.buscar(campos[0])) {
+                            if (!lista_semestre.buscar(campos[0]) || !lista_semestre.buscarAño(Integer.parseInt(campos[1]))) {
                                 lista_semestre.addPrimero(campos[0], Integer.parseInt(campos[1]), null);
                                 StyledDocument doc = TPmensajescarga.getStyledDocument();
                                 Style style = TPmensajescarga.addStyle("Estilo", null);
@@ -1137,7 +1058,7 @@ public class Administrador extends javax.swing.JFrame {
 
                                 }
                                 System.out.println("SEMESTRE CARGADO: " + campos[0] + " - " + campos[1]);
-                            } else if (lista_semestre.buscar(campos[0])) {
+                            } else if (lista_semestre.buscar(campos[0]) && lista_semestre.buscarAño(Integer.parseInt(campos[1]))) {
                                 StyledDocument doc = TPmensajescarga.getStyledDocument();
                                 Style style = TPmensajescarga.addStyle("Estilo", null);
                                 StyleConstants.setForeground(style, Color.red);
@@ -1151,7 +1072,8 @@ public class Administrador extends javax.swing.JFrame {
                             break;
                         case 7:
                             System.out.println("Es un curso");
-                            if (lista_catedratico.buscar(campos[2]) == true) {
+                            if (lista_catedratico.buscar(campos[2]) == true && (!lista_curso.buscar(campos[1]) || !lista_curso.buscarCodigo(campos[0]) || !lista_curso.buscarSeccion(campos[4]))) {
+                                //if (!lista_curso.buscar(campos[1]) || !lista_curso.buscarCodigo(campos[0]) || !lista_curso.buscarSeccion(campos[4])) {
                                 String[] pre = campos[5].split(",");
                                 ListaPre prer = new ListaPre();
                                 for (int i = 0; i < pre.length; i++) {
@@ -1179,6 +1101,17 @@ public class Administrador extends javax.swing.JFrame {
 
                                 }
                                 System.out.println("CURSO CARGADO: " + campos[0] + " - " + campos[1] + " - " + lista_catedratico.buscarNombre(campos[2]));
+                                /*} else if (lista_curso.buscar(campos[1]) && lista_curso.buscarCodigo(campos[0]) && lista_curso.buscarSeccion(campos[4])) {
+                                    StyledDocument doc = TPmensajescarga.getStyledDocument();
+                                    Style style = TPmensajescarga.addStyle("Estilo", null);
+                                    StyleConstants.setForeground(style, Color.red);
+                                    try {
+                                        doc.insertString(doc.getLength(), "ERROR CURSO: " + campos[0] + " - " + campos[1] + " - " + lista_catedratico.buscarNombre(campos[2]) + " - Curso Existente \n", style);
+                                    } catch (BadLocationException e) {
+
+                                    }
+                                    System.out.println("ERROR CURSO: " + campos[0] + " - " + campos[1] + " - " + "Curso Existente");
+                                }*/
                             } else if (lista_catedratico.buscar(campos[2]) == false) {
                                 StyledDocument doc = TPmensajescarga.getStyledDocument();
                                 Style style = TPmensajescarga.addStyle("Estilo", null);
@@ -1189,6 +1122,16 @@ public class Administrador extends javax.swing.JFrame {
 
                                 }
                                 System.out.println("ERROR CURSO: " + campos[0] + " - " + campos[1] + " - " + "Catedratico Inexistente");
+                            } else if (lista_curso.buscar(campos[1]) && lista_curso.buscarCodigo(campos[0]) && lista_curso.buscarSeccion(campos[4])) {
+                                StyledDocument doc = TPmensajescarga.getStyledDocument();
+                                Style style = TPmensajescarga.addStyle("Estilo", null);
+                                StyleConstants.setForeground(style, Color.red);
+                                try {
+                                    doc.insertString(doc.getLength(), "ERROR CURSO: " + campos[0] + " - " + campos[1] + " - " + lista_catedratico.buscarNombre(campos[2]) + " - Curso Existente \n", style);
+                                } catch (BadLocationException e) {
+
+                                }
+                                System.out.println("ERROR CURSO: " + campos[0] + " - " + campos[1] + " - " + "Curso Existente");
                             }
                             break;
                         default:
@@ -1304,22 +1247,6 @@ public class Administrador extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_bmodificarCActionPerformed
-
-    private void txtnombre_CatedraticoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnombre_CatedraticoFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombre_CatedraticoFocusGained
-
-    private void txtnombre_CatedraticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnombre_CatedraticoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombre_CatedraticoMouseClicked
-
-    private void txtcorreo_CatedraticoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreo_CatedraticoFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcorreo_CatedraticoFocusGained
-
-    private void txtcorreo_CatedraticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreo_CatedraticoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcorreo_CatedraticoMouseClicked
 
     private void bagregar_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bagregar_CActionPerformed
         // TODO add your handling code here:

@@ -1,5 +1,6 @@
 
 import Estructuras.ListaCurso;
+import Estructuras.ListaEstudiante;
 import Estructuras.ListaSemestre;
 import javax.swing.DefaultComboBoxModel;
 
@@ -14,8 +15,9 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class Estudiante extends javax.swing.JFrame {
 
-    ListaSemestre semestre = new ListaSemestre();
-    //static Administrador admin = new Administrador();
+    static ListaEstudiante estudiante = Administrador.lista_estudiante;
+    int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
+    ListaSemestre semestre = estudiante.obtenerSemestreL(Indice_Estudiante);
 
     int Indice_Semestre = -1;
     int Indice_Curso = -1;
@@ -206,10 +208,10 @@ public class Estudiante extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         new Login().setVisible(true);
-        int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
-        Administrador.lista_estudiante.modificar(Indice_Estudiante, Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCuiL(Indice_Estudiante), Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCorreoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCreditoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
+        //int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
+        //estudiante.modificar(Indice_Estudiante, Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCuiL(Indice_Estudiante), Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCorreoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCreditoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
         ListaSemestre estudiantesemestres = Administrador.lista_estudiante.obtenerSemestreL(Indice_Estudiante);
-        System.out.println(Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante) + " - " + Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante));
+        System.out.println(estudiante.obtenerCarneL(Indice_Estudiante) + " - " + estudiante.obtenerNombreL(Indice_Estudiante));
         estudiantesemestres.imprimir();
     }//GEN-LAST:event_bsalirActionPerformed
 
@@ -218,9 +220,7 @@ public class Estudiante extends javax.swing.JFrame {
         Indice_Semestre = cbsemestre.getSelectedIndex();
         Indice_Curso = cbcurso.getSelectedIndex();
         ListaCurso cursos = new ListaCurso();
-        /*for (int i = 0; i < semestre.tamaño(); i++) {
-            cursos = semestre.obtenerCurso(i);
-        }*/
+        //semestre = estudiante.obtenerSemestreL(Indice_Estudiante);
         cursos.addPrimero(Administrador.lista_curso.obtenerCodigoL(Indice_Curso), Administrador.lista_curso.obtenerNombreL(Indice_Curso), Administrador.lista_curso.obtenerCuiL(Indice_Curso), Administrador.lista_curso.obtenerCreditoL(Indice_Curso), Administrador.lista_curso.obtenerSeccionL(Indice_Curso), Administrador.lista_curso.obtenerPreL(Indice_Curso), Administrador.lista_curso.obtenerPostL(Indice_Curso));
         if (!semestre.buscar(Administrador.lista_semestre.obtenerNombreL(Indice_Semestre))) {
             semestre.addPrimero(Administrador.lista_semestre.obtenerNombreL(Indice_Semestre), Administrador.lista_semestre.obtenerAñoL(Indice_Semestre), cursos);
@@ -229,20 +229,20 @@ public class Estudiante extends javax.swing.JFrame {
             cursos.addPrimero(Administrador.lista_curso.obtenerCodigoL(Indice_Curso), Administrador.lista_curso.obtenerNombreL(Indice_Curso), Administrador.lista_curso.obtenerCuiL(Indice_Curso), Administrador.lista_curso.obtenerCreditoL(Indice_Curso), Administrador.lista_curso.obtenerSeccionL(Indice_Curso), Administrador.lista_curso.obtenerPreL(Indice_Curso), Administrador.lista_curso.obtenerPostL(Indice_Curso));
             semestre.modificar(semestre.obtenerIndice(Administrador.lista_semestre.obtenerNombreL(Indice_Semestre)), Administrador.lista_semestre.obtenerNombreL(Indice_Semestre), Administrador.lista_semestre.obtenerAñoL(Indice_Semestre), cursos);
         }
-        int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
-        Administrador.lista_estudiante.modificar(Indice_Estudiante, Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCuiL(Indice_Estudiante), Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCorreoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCreditoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
-        ListaSemestre estudiantesemestres = Administrador.lista_estudiante.obtenerSemestreL(Indice_Estudiante);
-        System.out.println(Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante) + " - " + Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante));
-        estudiantesemestres.imprimir();
+        //int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
+        estudiante.modificar(Indice_Estudiante, estudiante.obtenerCarneL(Indice_Estudiante), estudiante.obtenerCuiL(Indice_Estudiante), estudiante.obtenerNombreL(Indice_Estudiante), estudiante.obtenerCorreoL(Indice_Estudiante), estudiante.obtenerCreditoL(Indice_Estudiante), estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
+        //ListaSemestre estudiantesemestres = Administrador.lista_estudiante.obtenerSemestreL(Indice_Estudiante);
+        System.out.println(estudiante.obtenerCarneL(Indice_Estudiante) + " - " + estudiante.obtenerNombreL(Indice_Estudiante));
+        semestre.imprimir();
         //Administrador.lista_estudiante.imprimir();
     }//GEN-LAST:event_basignarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
-        Administrador.lista_estudiante.modificar(Indice_Estudiante, Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCuiL(Indice_Estudiante), Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCorreoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCreditoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
-        ListaSemestre estudiantesemestres = Administrador.lista_estudiante.obtenerSemestreL(Indice_Estudiante);
-        System.out.println(Administrador.lista_estudiante.obtenerCarneL(Indice_Estudiante) + " - " + Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante));
+        //int Indice_Estudiante = Administrador.lista_estudiante.obtenerIndice(Login.UsuEstudiante);
+        //estudiante.modificar(Indice_Estudiante, estudiante.obtenerCarneL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCuiL(Indice_Estudiante), Administrador.lista_estudiante.obtenerNombreL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCorreoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerCreditoL(Indice_Estudiante), Administrador.lista_estudiante.obtenerContraseñaL(Indice_Estudiante), semestre);
+        ListaSemestre estudiantesemestres = estudiante.obtenerSemestreL(Indice_Estudiante);
+        System.out.println(estudiante.obtenerCarneL(Indice_Estudiante) + " - " + estudiante.obtenerNombreL(Indice_Estudiante));
         estudiantesemestres.imprimir();
     }//GEN-LAST:event_jButton1ActionPerformed
 

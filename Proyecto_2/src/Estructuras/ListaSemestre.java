@@ -115,6 +115,21 @@ public class ListaSemestre {
         return encontrado;
     }
     
+    public boolean buscarAño(int RefAño) {
+        boolean encontrado = false;
+        NodoSemestre temp = cabeza;
+        if (!estaVacia()) {
+            do {
+                if (RefAño == temp.obtenerAño()) {
+                    encontrado = true;
+                    break;
+                }
+                temp = temp.obtenerSiguiente();
+            } while (temp != null);
+        }
+        return encontrado;
+    }
+    
     public int obtenerIndice(String RefNombre) {
         NodoSemestre temp = cabeza;
         int contador = 0;

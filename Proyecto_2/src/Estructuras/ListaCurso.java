@@ -166,6 +166,51 @@ public class ListaCurso {
         return temporal.obtenerPost();
     }
     
+    public boolean buscar(String RefNombre) {
+        boolean encontrado = false;
+        NodoCurso temp = cabeza;
+        if (!estaVacia()) {
+            do {
+                if (RefNombre.equals(temp.obtenerNombre())) {
+                    encontrado = true;
+                    break;
+                }
+                temp = temp.obtenerSiguiente();
+            } while (temp != cabeza);
+        }
+        return encontrado;
+    }
+    
+    public boolean buscarCodigo(String RefCodigo) {
+        boolean encontrado = false;
+        NodoCurso temp = cabeza;
+        if (!estaVacia()) {
+            do {
+                if (RefCodigo.equals(temp.obtenerCodigo())) {
+                    encontrado = true;
+                    break;
+                }
+                temp = temp.obtenerSiguiente();
+            } while (temp != cabeza);
+        }
+        return encontrado;
+    }
+    
+    public boolean buscarSeccion(String RefSeccion) {
+        boolean encontrado = false;
+        NodoCurso temp = cabeza;
+        if (!estaVacia()) {
+            do {
+                if (RefSeccion.equals(temp.obtenerSeccion())) {
+                    encontrado = true;
+                    break;
+                }
+                temp = temp.obtenerSiguiente();
+            } while (temp != cabeza);
+        }
+        return encontrado;
+    }
+    
     public void imprimir() {
         NodoCurso temp = cabeza;
         if (!estaVacia()) {
